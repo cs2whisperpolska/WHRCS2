@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (loadingScreen) {
             loadingScreen.classList.add('hidden');
         }
-    }, 1500);
+    }, 2000);
 });
 
 function createParticles() {
     const container = document.getElementById('particlesContainer');
     if (!container) return;
     
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
@@ -116,7 +116,7 @@ document.querySelectorAll('.stat-number').forEach(counter => {
 });
 
 // ===== RIPPLE EFFECT FOR BUTTONS =====
-document.querySelectorAll('.btn-primary, .btn-final').forEach(button => {
+document.querySelectorAll('.btn-primary, .btn-secondary, .btn-final').forEach(button => {
     button.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
         const rect = this.getBoundingClientRect();
@@ -212,7 +212,7 @@ mobileStyles.textContent = `
             top: 80px;
             left: 0;
             right: 0;
-            background: var(--dark-bg);
+            background: var(--cs2-dark);
             border-top: 1px solid rgba(255, 165, 0, 0.2);
             flex-direction: column;
             padding: 2rem;
@@ -285,8 +285,19 @@ window.addEventListener('load', function() {
     document.body.classList.add('loaded');
     
     // Add entrance animations
-    const heroContent = document.querySelector('.hero-content > *');
+    const heroContent = document.querySelector('.hero-content');
     if (heroContent) {
-        heroContent.classList.add('fade-in');
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
     }
+    
+    // Initial status update
+    updateServerStatus();
+});
+
+// Add loading animation complete
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 500);
 });
