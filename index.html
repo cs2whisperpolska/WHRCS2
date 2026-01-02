@@ -1,434 +1,394 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 Arena - Professional CS2 Community</title>
-    <meta name="description" content="Dołącz do największej polskiej społeczności CS2. 400+ członków, turnieje, LFG, nauka i wspólne granie!">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230A0E17' stroke='%23FFA500' stroke-width='2'/%3E%3Cpath d='M30 50 L70 50 M50 30 L50 70' stroke='%23FFA500' stroke-width='3'/%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS2 WHISPER POLSKA – Profesjonalna Drużyna CS2</title>
+  <meta name="description" content="Dołącz do CS2 WHISPER POLSKA – elitarnej drużyny Counter-Strike 2. Rekrutacja, turnieje, scrimy i profesjonalny rozwój.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%230a0a0a' d='M0 0h100v100H0z'/%3E%3Cpath stroke='%2300f0ff' stroke-width='2' d='M50 10v80m-40-40h80'/%3E%3C/svg%3E">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-content">
-            <div class="cs2-crosshair">
-                <div class="crosshair-line horizontal"></div>
-                <div class="crosshair-line vertical"></div>
-                <div class="crosshair-center"></div>
-            </div>
-            <div class="loading-text">CS2 Arena</div>
-            <div class="loading-subtext">Ładowanie społeczności...</div>
+  <!-- Loading -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="whisper-loader">
+      <div class="loader-crosshair"></div>
+      <div class="loader-text">WHISPER</div>
+      <div class="loader-sub">Ładowanie...</div>
+    </div>
+  </div>
+
+  <!-- Background -->
+  <div class="bg-effects">
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-particles" id="particlesContainer"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <div class="brand-crosshair">
+          <div class="crosshair-line horizontal"></div>
+          <div class="crosshair-line vertical"></div>
         </div>
+        <div class="brand-text">
+          <span class="brand-main">WHISPER</span>
+          <span class="brand-sub">POLSKA</span>
+        </div>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">O drużynie</a>
+        <a href="#features" class="nav-link">Dla graczy</a>
+        <a href="#stats" class="nav-link">Statystyki</a>
+        <a href="#join" class="nav-link join-btn">Dołącz</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        <span>DRUŻYNA AKTYWNA</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-main">WHISPER</span>
+        <span class="title-sub">POLSKA</span>
+      </h1>
+
+      <p class="hero-description">
+        Elitarna drużyna Counter-Strike 2. Rekrutujemy najlepszych graczy w Polsce. 
+        Dołącz do nas i graj na najwyższym poziomie – scrimy, turnieje, profesjonalny rozwój.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-number">400+</div>
+          <div class="stat-label">Członków</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-box">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Online</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-box">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Aktywność</div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="https://discord.gg/MGU3qsyBDB" target="_blank" class="btn-primary">
+          <i class="fab fa-discord"></i>
+          <span>DOŁĄCZ DO DRUŻYNY</span>
+        </a>
+        <button class="btn-secondary" onclick="scrollToSection('about')">
+          <span>POZNAJ WHISPER</span>
+        </button>
+      </div>
     </div>
 
-    <!-- Background Effects -->
-    <div class="bg-effects">
-        <div class="bg-gradient"></div>
-        <div class="bg-grid"></div>
-        <div class="bg-particles" id="particlesContainer"></div>
+    <div class="hero-visual">
+      <div class="whisper-card">
+        <div class="card-header">
+          <div class="server-icon">🎯</div>
+          <div class="server-info">
+            <div class="server-name">WHISPER POLSKA</div>
+            <div class="server-status">50 aktywnych graczy</div>
+          </div>
+        </div>
+        <div class="card-channels">
+          <div class="channel active">
+            <i class="fas fa-hashtag"></i>
+            <span>rekrutacja</span>
+          </div>
+          <div class="channel">
+            <i class="fas fa-users"></i>
+            <span>skrimy</span>
+          </div>
+          <div class="channel">
+            <i class="fas fa-volume-up"></i>
+            <span>team voice</span>
+          </div>
+        </div>
+        <div class="card-users">
+          <div class="user-avatar">A</div>
+          <div class="user-avatar">B</div>
+          <div class="user-avatar">C</div>
+          <div class="user-avatar more">+47</div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-brand">
-                <div class="brand-crosshair">
-                    <div class="crosshair-line horizontal"></div>
-                    <div class="crosshair-line vertical"></div>
-                </div>
-                <div class="brand-text">
-                    <span class="brand-main">CS2 WHISPER POLSKA</span>
-                    <span class="brand-sub">Polska Społeczność</span>
-                </div>
-            </a>
-            
-            <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">O nas</a>
-                <a href="#features" class="nav-link">Funkcje</a>
-                <a href="#stats" class="nav-link">Statystyki</a>
-                <a href="#join" class="nav-link join-btn">Dołącz</a>
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">DLACZEGO WHISPER?</h2>
+        <p class="section-subtitle">Elitarna drużyna stworzona dla najlepszych graczy CS2</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Profesjonalizm i rozwój</h3>
+          <p>WHISPER POLSKA to nie tylko drużyna – to elitarna społeczność graczy CS2, którzy chcą grać na najwyższym poziomie. Rekrutujemy tylko najlepszych – sprawdź, czy masz to, czego szukamy.</p>
+
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-user-secret"></i></div>
+              <div class="feature-text">
+                <h4>Elitarni gracze</h4>
+                <p>Tylko sprawdzeni gracze z wysokim skill ratingiem</p>
+              </div>
             </div>
-            
-            <button class="mobile-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+              <div class="feature-text">
+                <h4>Turnieje & ligi</h4>
+                <p>Regularne udział w profesjonalnych turniejach</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="feature-text">
+                <h4>Analiza gry</h4>
+                <p>Profesjonalne analizy meczów i taktyki drużynowe</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <div class="badge-dot"></div>
-                <span>AKTYWNY SERWER</span>
+        <div class="about-visual">
+          <div class="info-card">
+            <div class="card-icon">🎯</div>
+            <h4>Codzienne treningi</h4>
+            <p>Scrimy, aim training i taktyka od 19:00</p>
+            <div class="activity-indicator">
+              <div class="pulse-dot"></div>
+              <span>Aktywni teraz</span>
             </div>
-            
-            <h1 class="hero-title">
-                <span class="title-main">COUNTER-STRIKE 2</span>
-                <span class="title-sub">ARENA POLSKA</span>
-            </h1>
-            
-            <p class="hero-description">
-                Dołącz do najprężniej rozwijającej się społeczności CS2 w Polsce. 
-                Codziennie znajdziesz tu aktywnych graczy gotowych do wspólnych meczów, 
-                turniejów i profesjonalnej nauki gry.
-            </p>
-            
-            <div class="hero-stats">
-                <div class="stat-box">
-                    <div class="stat-number">400+</div>
-                    <div class="stat-label">Członków</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-box">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Online</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-box">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Aktywność</div>
-                </div>
-            </div>
-            
-            <div class="hero-actions">
-                <a href="https://discord.gg/MGU3qsyBDB" target="_blank" class="btn-primary">
-                    <i class="fab fa-discord"></i>
-                    <span>DOŁĄCZ TERAZ</span>
-                </a>
-                
-                <button class="btn-secondary" onclick="scrollToSection('about')">
-                    <span>POZNAJ NAS</span>
-                </button>
-            </div>
+          </div>
         </div>
-        
-        <div class="hero-visual">
-            <div class="discord-card">
-                <div class="card-header">
-                    <div class="server-icon">🎯</div>
-                    <div class="server-info">
-                        <div class="server-name">CS2 POLSKA</div>
-                        <div class="server-status">50 użytkowników online</div>
-                    </div>
-                </div>
-                <div class="card-channels">
-                    <div class="channel active">
-                        <i class="fas fa-hashtag"></i>
-                        <span>ogólny</span>
-                        <div class="channel-pulse"></div>
-                    </div>
-                    <div class="channel">
-                        <i class="fas fa-users"></i>
-                        <span>szukam-drużyny</span>
-                    </div>
-                    <div class="channel">
-                        <i class="fas fa-volume-up"></i>
-                        <span>Competitive #1</span>
-                    </div>
-                </div>
-                <div class="card-users">
-                    <div class="user-avatar">A</div>
-                    <div class="user-avatar">B</div>
-                    <div class="user-avatar">C</div>
-                    <div class="user-avatar more">+47</div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">DLA AMBITNYCH GRACZY</h2>
+        <p class="section-subtitle">Co oferujemy członkom WHISPER POLSKA</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="card-icon-wrapper"><i class="fas fa-user-check"></i></div>
+          <h3>REKRUTACJA</h3>
+          <p>Sprawdzamy skill, komunikację i podejście do gry. Tylko najlepsi dostają zaproszenie.</p>
+          <div class="card-highlight">ELITA</div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">DLACZEGO WARTO DOŁĄCZYĆ?</h2>
-                <p class="section-subtitle">Profesjonalna społeczność CS2 stworzona przez graczy, dla graczy</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Doświadczenie, które się liczy</h3>
-                    <p>CS2 Arena to miejsce, gdzie polscy fani Counter-Strike 2 mogą się spotkać, uczyć i rozwijać swoje umiejętności. Niezależnie od Twojego poziomu zaawansowania, zawsze znajdziesz tu kogoś do gry.</p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                            <div class="feature-text">
-                                <h4>Bezpieczne środowisko</h4>
-                                <p>Zero toksyczności, profesjonalna moderacja</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon"><i class="fas fa-users"></i></div>
-                            <div class="feature-text">
-                                <h4>Aktywna społeczność</h4>
-                                <p>50+ graczy online każdego dnia</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="feature-text">
-                                <h4>Rozwój umiejętności</h4>
-                                <p>Nauka od lepszych graczy i wspólny progres</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-visual">
-                    <div class="info-card">
-                        <div class="card-icon">🎮</div>
-                        <h4>Codzienna aktywność</h4>
-                        <p>Zawsze ktoś gotowy do wspólnej gry</p>
-                        <div class="activity-indicator">
-                            <div class="pulse-dot"></div>
-                            <span>Aktywni teraz</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="card-icon-wrapper"><i class="fas fa-users"></i></div>
+          <h3>DRUŻYNA A</h3>
+          <p>Podstawowy skład do turniejów, regularne treningi i analiza meczów z trenerem.</p>
+          <div class="card-highlight">PRO</div>
         </div>
-    </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">KOMPLEKSOWE FUNKCJE</h2>
-                <p class="section-subtitle">Wszystko czego potrzebujesz do grania na najwyższym poziomie</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>SYSTEM LFG</h3>
-                    <p>Szybko znajdź graczy o podobnym skillu do wspólnych meczów. Wystarczy napisać na dedykowanym kanale.</p>
-                    <div class="card-highlight">DARMOWE</div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>KANAŁY GŁOSOWE</h3>
-                    <p>15+ kanałów głosowych dla różnych trybów gry. Zawsze znajdziesz wolny slot dla swojej drużyny.</p>
-                    <div class="card-highlight">BEZ LIMITÓW</div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>WSPÓLNE MECZE</h3>
-                    <p>Organizujemy wspólne mecze codziennie od 19:00. Dołącz do nas i graj z innymi!</p>
-                    <div class="card-highlight">CODZIENNIE</div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>NAUKA I PORADY</h3>
-                    <p>Kanały z poradnikami, taktykami i analizami meczów profesjonalnych graczy.</p>
-                    <div class="card-highlight">EDUKACJA</div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>TURNIEJE</h3>
-                    <p>Co miesiąc organizujemy turnieje wewnętrzne z nagrodami dla najlepszych graczy.</p>
-                    <div class="card-highlight">NAGRODY</div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>STATYSTYKI</h3>
-                    <p>Sprawdzaj swoje postępy i porównuj z innymi graczami na serwerze.</p>
-                    <div class="card-highlight">PROGRES</div>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="card-icon-wrapper"><i class="fas fa-calendar-alt"></i></div>
+          <h3>SCRIMY</h3>
+          <p>Codzienne mecze treningowe z innymi drużynami – od 19:00, zawsze w pełnym składzie.</p>
+          <div class="card-highlight">CODZIENNIE</div>
         </div>
-    </section>
 
-    <!-- Statistics Section -->
-    <section class="stats" id="stats">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">NASZE LICZBY MÓWIĄ SAME ZA SIEBIE</h2>
-                <p class="section-subtitle">Prawdziwe dane o naszej społeczności</p>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <div class="stat-number" data-target="400">0</div>
-                    <div class="stat-label">Totalnych członków</div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: 85%"></div>
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-user-check"></i></div>
-                    <div class="stat-number" data-target="50">0</div>
-                    <div class="stat-label">Online teraz</div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: 70%"></div>
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-comments"></i></div>
-                    <div class="stat-number" data-target="1000">0</div>
-                    <div class="stat-label">Wiadomości dziennie</div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: 90%"></div>
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
-                    <div class="stat-number" data-target="2023">2023</div>
-                    <div class="stat-label">Rok założenia</div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: 100%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="extra-stats">
-                <div class="extra-stat">
-                    <i class="fas fa-gamepad"></i>
-                    <span>20+ meczów dziennie</span>
-                </div>
-                <div class="extra-stat">
-                    <i class="fas fa-volume-up"></i>
-                    <span>15 kanałów głosowych</span>
-                </div>
-                <div class="extra-stat">
-                    <i class="fas fa-hashtag"></i>
-                    <span>25 kanałów tekstowych</span>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="card-icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
+          <h3>ANALIZA MECZÓW</h3>
+          <p>Nagrywamy i analizujemy każdy mecz – poznaj swoje błędy i popraw strategię.</p>
+          <div class="card-highlight">EDUKACJA</div>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="join">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">GOTOWY DO GRY?</h2>
-                <p class="cta-description">
-                    Dołącz do naszej społeczności i znajdź drużynę do wspólnych meczów w CS2!
-                </p>
-                
-                <div class="cta-benefits">
-                    <div class="cta-benefit">
-                        <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
-                        <span>Szybkie dołączenie</span>
-                    </div>
-                    <div class="cta-benefit">
-                        <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
-                        <span>Bezpieczna społeczność</span>
-                    </div>
-                    <div class="cta-benefit">
-                        <div class="benefit-icon"><i class="fas fa-infinity"></i></div>
-                        <span>Darmowy dostęp</span>
-                    </div>
-                </div>
-
-                <a href="https://discord.gg/MGU3qsyBDB" target="_blank" class="btn-final">
-                    <i class="fab fa-discord"></i>
-                    <div class="btn-content">
-                        <strong>DOŁĄCZ DO DISCORDA</strong>
-                        <small>Zacznij grać w 30 sekund</small>
-                    </div>
-                </a>
-                
-                <div class="cta-note">
-                    <i class="fas fa-info-circle"></i>
-                    <span>Dołączenie trwa mniej niż 30 sekund!</span>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="card-icon-wrapper"><i class="fas fa-trophy"></i></div>
+          <h3>TURNIEJE</h3>
+          <p>Systematyczny udział w turniejach ESEA, FaceIt i lokalnych mistrzostwach.</p>
+          <div class="card-highlight">NAGRODY</div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <div class="footer-crosshair">
-                            <div class="crosshair-line horizontal"></div>
-                            <div class="crosshair-line vertical"></div>
-                        </div>
-                        <span>CS2 Arena</span>
-                    </div>
-                    <p>Profesjonalna społeczność Counter-Strike 2 w Polsce</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-steam"></i></a>
-                        <a href="#"><i class="fab fa-twitch"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Serwer</h4>
-                    <a href="#about">O nas</a>
-                    <a href="#features">Funkcje</a>
-                    <a href="#stats">Statystyki</a>
-                    <a href="https://discord.gg/MGU3qsyBDB" target="_blank">Dołącz</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Społeczność</h4>
-                    <a href="#">Zasady serwera</a>
-                    <a href="#">Pomoc techniczna</a>
-                    <a href="#">Partnerzy</a>
-                    <a href="#">Kontakt</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Tryby gry</h4>
-                    <a href="#">Competitive</a>
-                    <a href="#">Casual</a>
-                    <a href="#">Wingman</a>
-                    <a href="#">Deathmatch</a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 CS2 Arena. Nie jesteśmy powiązani z Valve Corporation. Wszystkie prawa zastrzeżone.</p>
-            </div>
+        <div class="feature-card">
+          <div class="card-icon-wrapper"><i class="fas fa-chart-bar"></i></div>
+          <h3>STATYSTYKI</h3>
+          <p>Monitoruj swoje postępy – HLTV, FaceIt, ESEA – wszystko w jednym miejscu.</p>
+          <div class="card-highlight">PROGRES</div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+  <!-- Stats -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">NASZE WYNIKI</h2>
+        <p class="section-subtitle">Liczby nie kłamią – sprawdź naszą skuteczność</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-number" data-target="400">0</div>
+          <div class="stat-label">Rekrutacji</div>
+          <div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+          <div class="stat-number" data-target="12">0</div>
+          <div class="stat-label">Turniejów</div>
+          <div class="stat-bar"><div class="stat-fill" style="width: 70%"></div></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="stat-number" data-target="85">0</div>
+          <div class="stat-label">% Wygranych</div>
+          <div class="stat-bar"><div class="stat-fill" style="width: 90%"></div></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-star"></i></div>
+          <div class="stat-number" data-target="4.8">0</div>
+          <div class="stat-label">Ocena drużyny</div>
+          <div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div>
+        </div>
+      </div>
+
+      <div class="extra-stats">
+        <div class="extra-stat"><i class="fas fa-gamepad"></i><span>20+ meczów miesięcznie</span></div>
+        <div class="extra-stat"><i class="fas fa-medal"></i><span>3 mistrzostwa lokalne</span></div>
+        <div class="extra-stat"><i class="fas fa-handshake"></i><span>15 partnerstw z drużynami</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="join">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">CHCESZ DOŁĄCZYĆ?</h2>
+        <p class="cta-description">Sprawdź, czy masz to, czego szukamy. Rekrutacja trwa!</p>
+
+        <div class="cta-requirements">
+          <div class="req-item">
+            <i class="fas fa-crosshairs"></i>
+            <span>Faceit min. 6 lvl</span>
+          </div>
+          <div class="req-item">
+            <i class="fas fa-microphone"></i>
+            <span>Komunikacja TeamSpeak</span>
+          </div>
+          <div class="req-item">
+            <i class="fas fa-calendar"></i>
+            <span>Aktywność 4 dni w tyg.</span>
+          </div>
+        </div>
+
+        <a href="https://discord.gg/MGU3qsyBDB" target="_blank" class="btn-final">
+          <i class="fab fa-discord"></i>
+          <div class="btn-content">
+            <strong>APLIKUJ TERAZ</strong>
+            <small>Dołącz do WHISPER</small>
+          </div>
+        </a>
+
+        <div class="cta-note">
+          <i class="fas fa-info-circle"></i>
+          <span>Skontaktujemy się w ciągu 24h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-brand">
+            <div class="footer-crosshair">
+              <div class="crosshair-line horizontal"></div>
+              <div class="crosshair-line vertical"></div>
+            </div>
+            <span>WHISPER POLSKA</span>
+          </div>
+          <p>Elitarna drużyna Counter-Strike 2</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-steam"></i></a>
+            <a href="#"><i class="fab fa-twitch"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Drużyna</h4>
+          <a href="#about">O nas</a>
+          <a href="#features">Dla graczy</a>
+          <a href="#stats">Wyniki</a>
+          <a href="https://discord.gg/MGU3qsyBDB" target="_blank">Dołącz</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Kontakt</h4>
+          <a href="#">Discord: @WhisperAdmin</a>
+          <a href="#">E-mail: whisper@cs2.pl</a>
+          <a href="#">Steam Group</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Turnieje</h4>
+          <a href="#">ESEA</a>
+          <a href="#">FaceIt</a>
+          <a href="#">ESL Polish</a>
+          <a href="#">LAN Katowice</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 WHISPER POLSKA. Nie jesteśmy powiązani z Valve Corporation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
