@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 Arena - Profesjonalny Discord Server</title>
-    <meta name="description" content="Dołącz do najaktywniejszego polskiego serwera CS2. 400+ członków, 50+ online, turnieje, LFG i wiele więcej!">
+    <title>CS2 Arena - Professional CS2 Community</title>
+    <meta name="description" content="Dołącz do największej polskiej społeczności CS2. 400+ członków, turnieje, LFG, nauka i wspólne granie!">
     
-    <!-- Preload critical resources -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,43 +18,49 @@
     <link rel="stylesheet" href="styles.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23FFA500' stroke-width='4'/%3E%3Cline x1='50' y1='10' x2='50' y2='90' stroke='%23FFA500' stroke-width='2'/%3E%3Cline x1='10' y1='50' x2='90' y2='50' stroke='%23FFA500' stroke-width='2'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230A0E17' stroke='%23FFA500' stroke-width='2'/%3E%3Cpath d='M30 50 L70 50 M50 30 L50 70' stroke='%23FFA500' stroke-width='3'/%3E%3C/svg%3E">
 </head>
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
-            <div class="loading-crosshair"></div>
-            <div class="loading-text">Ładowanie CS2 Arena...</div>
+            <div class="cs2-crosshair">
+                <div class="crosshair-line horizontal"></div>
+                <div class="crosshair-line vertical"></div>
+                <div class="crosshair-center"></div>
+            </div>
+            <div class="loading-text">CS2 Arena</div>
+            <div class="loading-subtext">Ładowanie społeczności...</div>
         </div>
     </div>
 
-    <!-- Background Elements -->
-    <div class="bg-elements">
+    <!-- Background Effects -->
+    <div class="bg-effects">
         <div class="bg-gradient"></div>
+        <div class="bg-grid"></div>
         <div class="bg-particles" id="particlesContainer"></div>
-        <div class="bg-crosshairs"></div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <div class="brand-icon">
-                    <i class="fas fa-crosshairs"></i>
+            <a href="#home" class="nav-brand">
+                <div class="brand-crosshair">
+                    <div class="crosshair-line horizontal"></div>
+                    <div class="crosshair-line vertical"></div>
                 </div>
                 <div class="brand-text">
                     <span class="brand-main">CS2 Arena</span>
                     <span class="brand-sub">Polska Społeczność</span>
                 </div>
-            </div>
+            </a>
             
             <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link active">Strona główna</a>
-                <a href="#about" class="nav-link">O serwerze</a>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">O nas</a>
                 <a href="#features" class="nav-link">Funkcje</a>
                 <a href="#stats" class="nav-link">Statystyki</a>
-                <a href="#join" class="nav-link cta-nav">Dołącz</a>
+                <a href="#join" class="nav-link join-btn">Dołącz</a>
             </div>
             
             <button class="mobile-toggle" id="mobileToggle">
@@ -67,81 +73,81 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
-            <div class="hero-shapes"></div>
-        </div>
-        
         <div class="hero-content">
             <div class="hero-badge">
-                <div class="badge-pulse"></div>
-                <i class="fas fa-circle"></i>
-                <span>Serwer aktywny</span>
+                <div class="badge-dot"></div>
+                <span>AKTYWNY SERWER</span>
             </div>
             
             <h1 class="hero-title">
-                <span class="title-main" data-text="CS2 Arena">CS2 Arena</span>
-                <span class="title-sub">Profesjonalny Discord Server</span>
+                <span class="title-main">COUNTER-STRIKE 2</span>
+                <span class="title-sub">ARENA POLSKA</span>
             </h1>
             
             <p class="hero-description">
                 Dołącz do najprężniej rozwijającej się społeczności CS2 w Polsce. 
                 Codziennie znajdziesz tu aktywnych graczy gotowych do wspólnych meczów, 
-                turniejów i nauki od najlepszych.
+                turniejów i profesjonalnej nauki gry.
             </p>
             
             <div class="hero-stats">
-                <div class="stat-item">
+                <div class="stat-box">
                     <div class="stat-number">400+</div>
-                    <div class="stat-label">Aktywnych członków</div>
+                    <div class="stat-label">Członków</div>
                 </div>
                 <div class="stat-divider"></div>
-                <div class="stat-item">
+                <div class="stat-box">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">Online teraz</div>
+                    <div class="stat-label">Online</div>
                 </div>
                 <div class="stat-divider"></div>
-                <div class="stat-item">
+                <div class="stat-box">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">Non-stop aktywność</div>
+                    <div class="stat-label">Aktywność</div>
                 </div>
             </div>
             
             <div class="hero-actions">
                 <a href="https://discord.gg/MGU3qsyBDB" target="_blank" class="btn-primary">
-                    <span class="btn-icon"><i class="fab fa-discord"></i></span>
-                    <span class="btn-text">Dołącz teraz</span>
-                    <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                    <i class="fab fa-discord"></i>
+                    <span>DOŁĄCZ TERAZ</span>
                 </a>
                 
                 <button class="btn-secondary" onclick="scrollToSection('about')">
-                    <span class="btn-text">Dowiedz się więcej</span>
+                    <span>POZNAJ NAS</span>
                 </button>
             </div>
-            
-            <div class="hero-preview">
-                <div class="preview-card">
-                    <div class="preview-header">
-                        <div class="preview-icon">🎯</div>
-                        <div class="preview-info">
-                            <div class="preview-title">CS2 Arena Discord</div>
-                            <div class="preview-status">50 aktywnych użytkowników</div>
-                        </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="discord-card">
+                <div class="card-header">
+                    <div class="server-icon">🎯</div>
+                    <div class="server-info">
+                        <div class="server-name">CS2 Arena</div>
+                        <div class="server-status">50 użytkowników online</div>
                     </div>
-                    <div class="preview-channels">
-                        <div class="channel-item">
-                            <i class="fas fa-hashtag"></i>
-                            <span>ogólny</span>
-                        </div>
-                        <div class="channel-item">
-                            <i class="fas fa-users"></i>
-                            <span>szukam-drużyny</span>
-                        </div>
-                        <div class="channel-item">
-                            <i class="fas fa-volume-up"></i>
-                            <span>Competitive #1</span>
-                        </div>
+                </div>
+                <div class="card-channels">
+                    <div class="channel active">
+                        <i class="fas fa-hashtag"></i>
+                        <span>ogólny</span>
+                        <div class="channel-pulse"></div>
                     </div>
+                    <div class="channel">
+                        <i class="fas fa-users"></i>
+                        <span>szukam-drużyny</span>
+                    </div>
+                    <div class="channel">
+                        <i class="fas fa-volume-up"></i>
+                        <span>Competitive #1</span>
+                    </div>
+                </div>
+                <div class="card-users">
+                    <div class="user-avatar">A</div>
+                    <div class="user-avatar">B</div>
+                    <div class="user-avatar">C</div>
+                    <div class="user-avatar more">+47</div>
                 </div>
             </div>
         </div>
@@ -151,33 +157,33 @@
     <section class="about" id="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">O naszym serwerze</h2>
-                <p class="section-subtitle">Społeczność stworzona przez graczy, dla graczy</p>
+                <h2 class="section-title">DLACZEGO WARTO DOŁĄCZYĆ?</h2>
+                <p class="section-subtitle">Profesjonalna społeczność CS2 stworzona przez graczy, dla graczy</p>
             </div>
             
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Profesjonalne podejście do gry</h3>
-                    <p>CS2 Arena to nie tylko serwer Discord - to przede wszystkim społeczność pasjonatów Counter-Strike 2, którzy dzielą się wiedzą, grają razem i się wspierają.</p>
+                    <h3>Doświadczenie, które się liczy</h3>
+                    <p>CS2 Arena to miejsce, gdzie polscy fani Counter-Strike 2 mogą się spotkać, uczyć i rozwijać swoje umiejętności. Niezależnie od Twojego poziomu zaawansowania, zawsze znajdziesz tu kogoś do gry.</p>
                     
-                    <div class="about-features">
-                        <div class="feature">
+                    <div class="features-list">
+                        <div class="feature-item">
                             <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                            <div class="feature-content">
+                            <div class="feature-text">
                                 <h4>Bezpieczne środowisko</h4>
-                                <p>Zero tolerancji dla toksyczności i hejtowania</p>
+                                <p>Zero toksyczności, profesjonalna moderacja</p>
                             </div>
                         </div>
-                        <div class="feature">
+                        <div class="feature-item">
                             <div class="feature-icon"><i class="fas fa-users"></i></div>
-                            <div class="feature-content">
+                            <div class="feature-text">
                                 <h4>Aktywna społeczność</h4>
                                 <p>50+ graczy online każdego dnia</p>
                             </div>
                         </div>
-                        <div class="feature">
+                        <div class="feature-item">
                             <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="feature-content">
+                            <div class="feature-text">
                                 <h4>Rozwój umiejętności</h4>
                                 <p>Nauka od lepszych graczy i wspólny progres</p>
                             </div>
@@ -186,13 +192,13 @@
                 </div>
                 
                 <div class="about-visual">
-                    <div class="visual-card">
-                        <div class="card-image">
-                            <div class="card-icon-main">🎮</div>
-                        </div>
-                        <div class="card-content">
-                            <h4>Codzienna aktywność</h4>
-                            <p>Zawsze ktoś gotowy do wspólnej gry</p>
+                    <div class="info-card">
+                        <div class="card-icon">🎮</div>
+                        <h4>Codzienna aktywność</h4>
+                        <p>Zawsze ktoś gotowy do wspólnej gry</p>
+                        <div class="activity-indicator">
+                            <div class="pulse-dot"></div>
+                            <span>Aktywni teraz</span>
                         </div>
                     </div>
                 </div>
@@ -204,8 +210,8 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Kompleksowe funkcje</h2>
-                <p class="section-subtitle">Wszystko czego potrzebujesz do grania w CS2</p>
+                <h2 class="section-title">KOMPLEKSOWE FUNKCJE</h2>
+                <p class="section-subtitle">Wszystko czego potrzebujesz do grania na najwyższym poziomie</p>
             </div>
             
             <div class="features-grid">
@@ -213,48 +219,54 @@
                     <div class="card-icon-wrapper">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>System LFG</h3>
+                    <h3>SYSTEM LFG</h3>
                     <p>Szybko znajdź graczy o podobnym skillu do wspólnych meczów. Wystarczy napisać na dedykowanym kanale.</p>
+                    <div class="card-highlight">DARMOWE</div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="card-icon-wrapper">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Kanały głosowe</h3>
+                    <h3>KANAŁY GŁOSOWE</h3>
                     <p>15+ kanałów głosowych dla różnych trybów gry. Zawsze znajdziesz wolny slot dla swojej drużyny.</p>
+                    <div class="card-highlight">BEZ LIMITÓW</div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="card-icon-wrapper">
                         <i class="fas fa-calendar-check"></i>
                     </div>
-                    <h3>Wspólne mecze</h3>
+                    <h3>WSPÓLNE MECZE</h3>
                     <p>Organizujemy wspólne mecze codziennie od 19:00. Dołącz do nas i graj z innymi!</p>
+                    <div class="card-highlight">CODZIENNIE</div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="card-icon-wrapper">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Nauka i porady</h3>
+                    <h3>NAUKA I PORADY</h3>
                     <p>Kanały z poradnikami, taktykami i analizami meczów profesjonalnych graczy.</p>
+                    <div class="card-highlight">EDUKACJA</div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="card-icon-wrapper">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3>Turnieje</h3>
+                    <h3>TURNIEJE</h3>
                     <p>Co miesiąc organizujemy turnieje wewnętrzne z nagrodami dla najlepszych graczy.</p>
+                    <div class="card-highlight">NAGRODY</div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="card-icon-wrapper">
                         <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3>Statystyki</h3>
+                    <h3>STATYSTYKI</h3>
                     <p>Sprawdzaj swoje postępy i porównuj z innymi graczami na serwerze.</p>
+                    <div class="card-highlight">PROGRES</div>
                 </div>
             </div>
         </div>
@@ -264,7 +276,7 @@
     <section class="stats" id="stats">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Nasze liczby</h2>
+                <h2 class="section-title">NASZE LICZBY MÓWIĄ SAME ZA SIEBIE</h2>
                 <p class="section-subtitle">Prawdziwe dane o naszej społeczności</p>
             </div>
             
@@ -273,28 +285,36 @@
                     <div class="stat-icon"><i class="fas fa-users"></i></div>
                     <div class="stat-number" data-target="400">0</div>
                     <div class="stat-label">Totalnych członków</div>
-                    <div class="stat-desc">400+ zarejestrowanych</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fas fa-user-check"></i></div>
                     <div class="stat-number" data-target="50">0</div>
                     <div class="stat-label">Online teraz</div>
-                    <div class="stat-desc">Średnio 50-70 osób</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 70%"></div>
+                    </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fas fa-comments"></i></div>
                     <div class="stat-number" data-target="1000">0</div>
                     <div class="stat-label">Wiadomości dziennie</div>
-                    <div class="stat-desc">Ponad 1000 msg/dzień</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
                     <div class="stat-number" data-target="2023">2023</div>
                     <div class="stat-label">Rok założenia</div>
-                    <div class="stat-desc">Aktywni nieprzerwanie</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 100%"></div>
+                    </div>
                 </div>
             </div>
             
@@ -319,7 +339,7 @@
     <section class="cta" id="join">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Gotowy do gry?</h2>
+                <h2 class="cta-title">GOTOWY DO GRY?</h2>
                 <p class="cta-description">
                     Dołącz do naszej społeczności i znajdź drużynę do wspólnych meczów w CS2!
                 </p>
@@ -338,13 +358,13 @@
                         <span>Darmowy dostęp</span>
                     </div>
                 </div>
-                
+
                 <a href="https://discord.gg/MGU3qsyBDB" target="_blank" class="btn-final">
-                    <span class="btn-icon"><i class="fab fa-discord"></i></span>
-                    <span class="btn-content">
-                        <strong>Dołącz do Discorda</strong>
+                    <i class="fab fa-discord"></i>
+                    <div class="btn-content">
+                        <strong>DOŁĄCZ DO DISCORDA</strong>
                         <small>Zacznij grać w 30 sekund</small>
-                    </span>
+                    </div>
                 </a>
                 
                 <div class="cta-note">
@@ -361,7 +381,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-brand">
-                        <i class="fas fa-crosshairs"></i>
+                        <div class="footer-crosshair">
+                            <div class="crosshair-line horizontal"></div>
+                            <div class="crosshair-line vertical"></div>
+                        </div>
                         <span>CS2 Arena</span>
                     </div>
                     <p>Profesjonalna społeczność Counter-Strike 2 w Polsce</p>
