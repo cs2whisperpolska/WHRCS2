@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dołącz do naszego Discorda!</title>
+    <title>Counter-Strike Discord Community - Dołącz teraz!</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
     <!-- Animated Background -->
     <div class="background-animation">
         <div class="gradient-bg"></div>
+        <div class="crosshair-pattern"></div>
         <div class="particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -30,12 +32,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fab fa-discord"></i>
-                <span>Discord Community</span>
+                <i class="fas fa-crosshairs"></i>
+                <span>CS:GO Community</span>
             </div>
             <div class="nav-links">
-                <a href="#about">O nas</a>
+                <a href="#about">O serwerze</a>
                 <a href="#features">Funkcje</a>
+                <a href="#ranks">Rangi</a>
                 <a href="#join" class="join-btn">Dołącz</a>
             </div>
         </div>
@@ -45,38 +48,58 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="discord-icon">
-                    <i class="fab fa-discord"></i>
+                <div class="cs-icon">
+                    <i class="fas fa-crosshairs"></i>
                 </div>
                 <h1 class="hero-title">
-                    <span class="gradient-text">Dołącz do naszej</span>
-                    <br>społeczności Discord!
+                    <span class="gradient-text">Counter-Strike</span>
+                    <br>Discord Community
                 </h1>
                 <p class="hero-description">
-                    Rozwijaj się, ucz, dziel wiedzą i baw się świetnie z ludźmi o podobnych zainteresowaniach!
+                    Dołącz do najaktywniejszej polskiej społeczności CS:GO/CS2! 
+                    Znajdź drużynę, ucz się taktyk, rywalizuj w turniejach i rozwijaj swoje umiejętności!
                 </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">2,847</span>
+                        <span class="stat-label">Aktywnych graczy</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Aktywność</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Kanałów głosowych</span>
+                    </div>
+                </div>
                 <div class="hero-buttons">
                     <a href="https://discord.gg/MGU3qsyBDB" target="_blank" class="cta-button">
                         <i class="fab fa-discord"></i>
-                        Dołącz teraz
+                        Dołącz do Discorda
                     </a>
-                    <button class="learn-more-btn">Dowiedz się więcej</button>
+                    <button class="learn-more-btn">Poznaj nas lepiej</button>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="floating-card">
                     <div class="card-header">
                         <div class="status-indicator online"></div>
-                        <span>Aktywni teraz</span>
+                        <span>Serwer aktywny</span>
                     </div>
                     <div class="card-content">
-                        <div class="member-avatars">
-                            <div class="avatar">A</div>
-                            <div class="avatar">B</div>
-                            <div class="avatar">C</div>
-                            <div class="avatar more">+23</div>
+                        <div class="rank-display">
+                            <div class="rank-icon">🥇</div>
+                            <div class="rank-info">
+                                <strong>Global Elite</strong>
+                                <small>142 graczy online</small>
+                            </div>
                         </div>
-                        <p>23 aktywnych użytkowników</p>
+                        <div class="game-modes">
+                            <span class="mode-tag">Competitive</span>
+                            <span class="mode-tag">Casual</span>
+                            <span class="mode-tag">Wingman</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,49 +109,76 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">Dlaczego warto do nas dołączyć?</h2>
+            <h2 class="section-title">Co oferujemy?</h2>
             <div class="features-grid">
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Aktywna społeczność</h3>
-                    <p>Ponad 200 członków, którzy zawsze chętnie pomogą i porozmawiają</p>
+                    <h3>Znajdź drużynę</h3>
+                    <p>System LFG (Looking for Group) - szybko znajdź graczy o podobnym skillu do wspólnych meczów</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-trophy"></i>
                     </div>
-                    <h3>Wiedza i rozwój</h3>
-                    <p>Kanały edukacyjne, tutoriale i możliwość nauki od innych</p>
+                    <h3>Turnieje & Ligi</h3>
+                    <p>Regularne turnieje z nagrodami, ligi wewnętrzne i możliwość rywalizacji na wysokim poziomie</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
-                        <i class="fas fa-gamepad"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Gry i rozrywka</h3>
-                    <p>Wspólne granie, turnieje i wiele innych aktywności</p>
+                    <h3>Szkolenia & Porady</h3>
+                    <p>Kanały edukacyjne, treningi aim, taktyki map, ekonomia i wiele więcej</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-icon">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Programowanie</h3>
-                    <p>Kanały dla developerów, help desk i projekty open source</p>
+                    <h3>Statystyki</h3>
+                    <p>Bot pokazujący statystyki CS:GO/CS2, trackowanie postępów i porównania z innymi</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="feature-icon">
-                        <i class="fas fa-music"></i>
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Muzyka i sztuka</h3>
-                    <p>Podziel się swoją twórczością lub odkryj nowych artystów</p>
+                    <h3>Kanały głosowe</h3>
+                    <p>50+ kanałów głosowych dla różnych rang i trybów gry, zawsze znajdziesz miejsce</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="feature-icon">
-                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-gift"></i>
                     </div>
-                    <h3>Eventy i nagrody</h3>
-                    <p>Regularne wydarzenia z nagrodami dla aktywnych członków</p>
+                    <h3>Nagrody & Skrzynki</h3>
+                    <p>System skrzynek z nagrodami, skiny CS:GO, klucze i inne fanty do wygrania</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranks Section -->
+    <section class="ranks" id="ranks">
+        <div class="container">
+            <h2 class="section-title">System rang CS:GO/CS2</h2>
+            <div class="ranks-grid">
+                <div class="rank-tier silver" data-aos="fade-up">
+                    <div class="rank-badge">🥉</div>
+                    <h3>Silver - Gold Nova</h3>
+                    <p>Kanały dla początkujących i średniozaawansowanych graczy</p>
+                    <div class="rank-stats">450+ graczy</div>
+                </div>
+                <div class="rank-tier gold" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rank-badge">🥈</div>
+                    <h3>Master Guardian</h3>
+                    <p>Dla zaawansowanych graczy szukających wyzwań</p>
+                    <div class="rank-stats">320+ graczy</div>
+                </div>
+                <div class="rank-tier elite" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rank-badge">🥇</div>
+                    <h3>Distinguished & Global</h3>
+                    <p>Elitarna sekcja dla najlepszych graczy serwera</p>
+                    <div class="rank-stats">180+ graczy</div>
                 </div>
             </div>
         </div>
@@ -139,20 +189,20 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item" data-aos="fade-up">
-                    <div class="stat-number" data-target="10">0</div>
-                    <div class="stat-label">Aktywnych użytkowników</div>
+                    <div class="stat-number" data-target="2847">0</div>
+                    <div class="stat-label">Aktywnych graczy</div>
                 </div>
                 <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-number" data-target="5">0</div>
-                    <div class="stat-label">Kanałów tematycznych</div>
+                    <div class="stat-number" data-target="156">0</div>
+                    <div class="stat-label">Codziennych meczów</div>
                 </div>
                 <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-number" data-target="98">0</div>
-                    <div class="stat-label">% Pozytywnych opinii</div>
+                    <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">% Pozytywnych recenzji</div>
                 </div>
                 <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-number" data-target="24">0</div>
-                    <div class="stat-label">Godzin aktywności dziennie</div>
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-label">Turnieji miesięcznie</div>
                 </div>
             </div>
         </div>
@@ -162,13 +212,27 @@
     <section class="cta" id="join">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Gotowy do przygody?</h2>
-                <p class="cta-text">Dołącz do tysięcznej społeczności już teraz!</p>
+                <h2 class="cta-title">Gotowy do gry?</h2>
+                <p class="cta-text">Dołącz do największej polskiej społeczności Counter-Strike!</p>
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Darmowy dostęp do wszystkich kanałów</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Turnieje z nagrodami co tydzień</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Przyjazna społeczność</span>
+                    </div>
+                </div>
                 <a href="https://discord.gg/MGU3qsyBDB" target="_blank" class="cta-button-large">
                     <i class="fab fa-discord"></i>
                     <span>
-                        <strong>Dołącz do Discorda</strong>
-                        <small>Kliknij i zacznij korzystać!</small>
+                        <strong>Dołącz teraz</strong>
+                        <small>Zacznij grać w 30 sekund!</small>
                     </span>
                 </a>
             </div>
@@ -180,26 +244,33 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Discord Community</h3>
-                    <p>Najlepsze miejsce do rozmów, nauki i zabawy!</p>
+                    <h3><i class="fas fa-crosshairs"></i> CS Community</h3>
+                    <p>Najaktywniejsza polska społeczność Counter-Strike</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Linki</h4>
+                    <h4>Quick Links</h4>
                     <a href="https://discord.gg/MGU3qsyBDB" target="_blank">Dołącz teraz</a>
                     <a href="#features">Funkcje</a>
-                    <a href="#about">O nas</a>
+                    <a href="#ranks">System rang</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Social Media</h4>
+                    <h4>Game Modes</h4>
+                    <a href="#">Competitive</a>
+                    <a href="#">Casual</a>
+                    <a href="#">Wingman</a>
+                    <a href="#">Danger Zone</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Social</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@car7hub"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-steam"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Discord Community. Wszystkie prawa zastrzeżone.</p>
+                <p>&copy; 2024 CS:GO Community. Nie jesteśmy powiązani z Valve Corporation.</p>
             </div>
         </div>
     </footer>
@@ -207,7 +278,4 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
