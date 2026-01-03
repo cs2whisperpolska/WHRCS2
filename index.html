@@ -1,190 +1,140 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Mój asystent AI</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    :root{--bg:#fff;--card:#f2f4f7;--text:#1f1f1f;--border:#dadce0;--accent:#1a73e8;}
-    [data-theme="dark"]{--bg:#0d1117;--card:#161b22;--text:#c9d1d9;--border:#30363d;--accent:#58a6ff;}
-    *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif;}
-    body{display:flex;flex-direction:column;height:100vh;background:var(--bg);color:var(--text);}
-    header{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-bottom:1px solid var(--border);}
-    #chat{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.8rem;}
-    .msg{max-width:82%;padding:.85rem 1rem;border-radius:1rem;line-height:1.45;white-space:pre-wrap;}
-    .user{align-self:flex-end;background:var(--accent);color:#fff;}
-    .bot{align-self:flex-start;background:var(--card);border:1px solid var(--border);}
-    .cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent);animation:blink 1s infinite;}
-    @keyframes blink{50%{opacity:0;}}
-    form{display:flex;gap:.5rem;padding:.75rem 1rem;border-top:1px solid var(--border);}
-    input[type=text]{flex:1;padding:.75rem 1rem;border:1px solid var(--border);border-radius:.7rem;background:var(--card);color:var(--text);}
-    button{padding:.6rem 1rem;border:none;border-radius:.7rem;background:var(--accent);color:#fff;cursor:pointer;}
-    button:disabled{opacity:.5;cursor:not-allowed;}
-    .controls{margin-top:.5rem;display:flex;gap:.5rem;font-size:.75rem;}
-    .controls button{background:var(--card);color:var(--text);border:1px solid var(--border);}
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS2 WHISPER POLSKA – dołącz na Discord!</title>
+    <style>
+        :root {
+            --cs-orange: #f7931e;
+            --cs-dark: #1a1a1a;
+            --cs-blue: #00aeef;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--cs-dark);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            background: linear-gradient(90deg, var(--cs-orange), var(--cs-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: .5rem;
+        }
+        h2 {
+            font-weight: 400;
+            opacity: .85;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        }
+        main {
+            max-width: 700px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin: 2.5rem 0;
+        }
+        .feat {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            flex: 1 1 220px;
+            transition: transform .2s;
+        }
+        .feat:hover {
+            transform: translateY(-4px);
+            border-color: var(--cs-orange);
+        }
+        .feat-icon {
+            font-size: 1.7rem;
+            margin-bottom: .4rem;
+        }
+        .btn-discord {
+            display: inline-flex;
+            align-items: center;
+            gap: .7rem;
+            background: #5865f2;
+            color: #fff;
+            font-size: 1.25rem;
+            padding: .9rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background .25s, transform .25s;
+            box-shadow: 0 4px 18px rgba(88,101,242,.35);
+        }
+        .btn-discord:hover {
+            background: #4752c4;
+            transform: scale(1.05);
+        }
+        footer {
+            margin-top: 3rem;
+            font-size: .85rem;
+            opacity: .55;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div style="display:flex;align-items:center;gap:.5rem">
-      <span style="font-size:1.4rem">🤖</span>
-      <h2>Asystent AI</h2>
-    </div>
-    <div>
-      <button id="newChat" title="Nowy czat">➕</button>
-      <button id="themeToggle" title="Motyw">🌓</button>
-    </div>
-  </header>
+    <header>
+        <h1>CS2 WHISPER POLSKA</h1>
+        <h2>Oficjalny Discord aktywnej polskiej społeczności Counter-Strike 2</h2>
+    </header>
 
-  <main id="chat"></main>
+    <main>
+        <p style="font-size: 1.1rem; line-height: 1.5;">
+            Szukasz równych sobie do rankedów? Potrzebujesz ekipy na turnieje? A może chcesz poprawić aim i poznać nowe granie?
+            Na naszym serwerze znajdziesz graczy na każdym poziomie — od silverów po globali.
+        </p>
 
-  <form id="form">
-    <input id="input" type="text" autocomplete="off" placeholder="Zapytaj o cokolwiek…" required>
-    <button id="sendBtn">Wyślij</button>
-  </form>
+        <section class="features">
+            <div class="feat">
+                <div class="feat-icon">🎯</div>
+                <strong>Team Finder</strong>
+                <div>sprawdzony skład na każdą godzinę</div>
+            </div>
+            <div class="feat">
+                <div class="feat-icon">💬</div>
+                <strong>10+ kanałów głosowych</strong>
+                <div>zawsze znajdziesz wolny slot</div>
+            </div>
+            <div class="feat">
+                <div class="feat-icon">🏆</div>
+                <strong>Turnieje & ligi</strong>
+                <div>co tydzień eventy z nagrodami</div>
+            </div>
+            <div class="feat">
+                <div class="feat-icon">📈</div>
+                <strong>Poradniki & demo-review</strong>
+                <div>poprawiaj skill z lepszymi</div>
+            </div>
+        </section>
 
-  <script>
-    /* ==========  KONFIGURACJA  ========== */
-    const TWOJ_KLUCZ = 'TWOJ_KLUCZ';          // <<<<<<<<< wklej swój klucz OpenAI
-    const MODEL      = 'gpt-3.5-turbo';       // lub gpt-4
-    const ENDPOINT   = 'https://api.openai.com/v1/chat/completions';
-    /* ===================================== */
+        <a class="btn-discord" href="https://discord.gg/MGU3qsyBDB">
+            <span>🎮</span>
+            <span>Dołącz na Discord</span>
+        </a>
+    </main>
 
-    const chat   = document.getElementById('chat');
-    const form   = document.getElementById('form');
-    const input  = document.getElementById('input');
-    const themeBtn= document.getElementById('themeToggle');
-    const newBtn = document.getElementById('newChat');
-    let ctrl = null; // do przerywania streamu
-
-    /* motyw */
-    themeBtn.onclick = () => {
-      document.documentElement.dataset.theme = 
-        document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', document.documentElement.dataset.theme);
-    };
-    if(localStorage.getItem('theme')) document.documentElement.dataset.theme = localStorage.getItem('theme');
-
-    /* nowy czat */
-    newBtn.onclick = () => { chat.innerHTML = ''; append('Cześć! Jak mogę Ci pomóc?','bot'); };
-
-    /* pomocniki */
-    const append = (txt,who,html=false) => {
-      const div = document.createElement('div');
-      div.className = 'msg '+who;
-      html ? div.innerHTML = txt : div.textContent = txt;
-      chat.appendChild(div);
-      chat.scrollTop = chat.scrollHeight;
-      return div;
-    };
-    const disable = (b) => { input.disabled = form.querySelector('button').disabled = b; };
-
-    /* --- STREAMING Z OPENAI --- */
-    async function streamAI(prompt){
-      const messages = [
-        {role:'system', content:'Jesteś pomocnym asystentem AI. Odpowiadaj zwięźle, w języku użytkownika.'},
-        {role:'user', content:prompt}
-      ];
-      ctrl = new AbortController();
-      const res = await fetch(ENDPOINT,{
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json',
-          'Authorization':'Bearer '+TWOJ_KLUCZ
-        },
-        body:JSON.stringify({model:MODEL,messages,temperature:.7,stream:true}),
-        signal:ctrl.signal
-      });
-      if(!res.ok) throw new Error(res.status+' '+res.statusText);
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let buf='',done=false;
-      const bubble = append('','bot');
-      const cursor = document.createElement('span'); cursor.className='cursor'; bubble.appendChild(cursor);
-      while(!done){
-        const {value,done:d} = await reader.read();
-        done=d;
-        buf+=decoder.decode(value,{stream:true});
-        const lines = buf.split('\n');
-        buf=lines.pop();
-        for(const line of lines){
-          if(line.startsWith('data: ')){
-            const data = line.slice(6);
-            if(data==='[DONE]'){done=true;break;}
-            try{
-              const obj = JSON.parse(data);
-              const token = obj.choices[0]?.delta?.content;
-              if(token){ cursor.insertAdjacentText('beforebegin',token); chat.scrollTop=chat.scrollHeight; }
-            }catch{}
-          }
-        }
-      }
-      cursor.remove();
-      addControls(bubble);
-    }
-
-    /* --- DEMO (gdy brak klucza) --- */
-    function fakeStream(prompt){
-      const pool = [
-        "Ciekawe pytanie – daj mi chwilę…",
-        "Tak, zgadza się!",
-        "Nie mam pewności, ale sprawdzę.",
-        "To zależy od kontekstu – rozwiniesz?",
-        "Zdecydowanie tak!",
-        "Nie powinno się tak robić.",
-        "Polecam poszukać więcej informacji."
-      ];
-      const bubble = append('','bot');
-      const cursor = document.createElement('span'); cursor.className='cursor'; bubble.appendChild(cursor);
-      const txt = pool[Math.floor(Math.random()*pool.length)];
-      let i=0;
-      const int = setInterval(()=>{
-        cursor.insertAdjacentText('beforebegin',txt[i++]);
-        chat.scrollTop=chat.scrollHeight;
-        if(i===txt.length){clearInterval(int);cursor.remove();addControls(bubble);}
-      },45);
-    }
-
-    /* przyciski pod odpowiedzią */
-    function addControls(bubble){
-      const bar = document.createElement('div'); bar.className='controls';
-      const copy = document.createElement('button'); copy.textContent='📋 Kopiuj';
-      copy.onclick = () => navigator.clipboard.writeText(bubble.textContent);
-      bar.appendChild(copy);
-      bubble.appendChild(bar);
-    }
-
-    /* submit */
-    form.onsubmit = async (e) => {
-      e.preventDefault();
-      const q = input.value.trim();
-      if(!q) return;
-      append(q,'user');
-      input.value='';
-      disable(true);
-      if(TWOJ_KLUCZ==='TWOJ_KLUCZ') await fakeStream(q);
-      else {
-        try{ await streamAI(q); }
-        catch(err){ append('Błąd: '+err.message,'bot'); }
-      }
-      disable(false);
-      input.focus();
-    };
-
-    /* mikrofon (opcjonalnie) */
-    if(window.SpeechRecognition || window.webkitSpeechRecognition){
-      const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
-      const rec = new Rec(); rec.lang='pl-PL'; rec.interimResults=false;
-      const mic = document.createElement('button'); mic.type='button'; mic.textContent='🎤'; mic.title='Dyktuj';
-      form.appendChild(mic);
-      mic.onclick = () => { rec.start(); mic.disabled=true; };
-      rec.onresult = e => { input.value = e.results[0][0].transcript; input.focus(); mic.disabled=false; };
-      rec.onerror  = () => mic.disabled=false;
-    }
-
-    /* start */
-    append('Cześć! Jestem Twoim asystentem AI – zapytaj o cokolwiek.','bot');
-    input.focus();
-  </script>
+    <footer>
+        Nie czekaj — aktywność rośnie, a gracze czekają właśnie na Ciebie.
+    </footer>
 </body>
 </html>
