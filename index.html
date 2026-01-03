@@ -26,34 +26,40 @@
             overflow: hidden;
             position: relative;
         }
-        /* dynamiczne tło */
+        /* ========== TŁO ========== */
         .bg-slider {
             position: fixed;
             inset: 0;
-            z-index: -2;
+            z-index: -3;
+            background: #000; /* fallback */
             background-size: cover;
             background-position: center;
-            animation: slide 18s infinite;
-            filter: brightness(.45);
+            animation: slide 15s infinite;
         }
         @keyframes slide {
-            0%, 33% { background-image: url("https://source.unsplash.com/1920x1080/?counter-strike"); }
-            34%, 66% { background-image: url("https://source.unsplash.com/1920x1080/?csgo"); }
-            67%, 100% { background-image: url("https://source.unsplash.com/1920x1080/?esport"); }
+            0%, 33% { background-image: url("https://images.alphacoders.com/130/1300900.jpg"); }
+            34%, 66% { background-image: url("https://images.alphacoders.com/130/1300904.jpg"); }
+            67%, 100% { background-image: url("https://images.alphacoders.com/130/1300906.jpg"); }
         }
-        /* rozbłysk */
+        /* czarny overlay dla czytelności */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: rgba(0, 0, 0, .45);
+        }
+        /* ========== EFEKTY ========== */
         .flash {
             position: fixed;
             inset: 0;
             z-index: -1;
-            background: radial-gradient(circle, rgba(255,255,255,.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, .15) 0%, transparent 70%);
             animation: flash 4s infinite;
         }
         @keyframes flash {
             0%, 90%, 100% { opacity: 0; }
             5%, 10% { opacity: 1; }
         }
-        /* glitch na h1 */
         h1 {
             font-size: clamp(2.2rem, 5.5vw, 4rem);
             position: relative;
@@ -106,8 +112,8 @@
             margin: 2.5rem 0;
         }
         .feat {
-            background: rgba(0,0,0,.35);
-            border: 1px solid rgba(255,255,255,.15);
+            background: rgba(0, 0, 0, .35);
+            border: 1px solid rgba(255, 255, 255, .15);
             border-radius: 12px;
             padding: 1.3rem 1.5rem;
             flex: 1 1 220px;
@@ -138,7 +144,7 @@
             border-radius: 50px;
             text-decoration: none;
             transition: background .25s, transform .25s;
-            box-shadow: 0 4px 18px rgba(88,101,242,.35);
+            box-shadow: 0 4px 18px rgba(88, 101, 242, .35);
             animation: pulse 2s infinite;
         }
         .btn-discord:hover {
@@ -146,8 +152,8 @@
             transform: scale(1.05);
         }
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 4px 18px rgba(88,101,242,.35); }
-            50% { box-shadow: 0 6px 24px rgba(88,101,242,.55); }
+            0%, 100% { box-shadow: 0 4px 18px rgba(88, 101, 242, .35); }
+            50% { box-shadow: 0 6px 24px rgba(88, 101, 242, .55); }
         }
         footer {
             margin-top: 3rem;
@@ -158,6 +164,7 @@
 </head>
 <body>
     <div class="bg-slider"></div>
+    <div class="overlay"></div>
     <div class="flash"></div>
 
     <header>
