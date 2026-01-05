@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaktywna mapa Sea of Thieves</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zoom-js/2.0.6/zoom.min.css">
     <style>
         body, html {
             margin: 0;
@@ -57,7 +58,7 @@
 </head>
 <body>
     <div class="map-container">
-        <img src="sea_of_thieves_map.png" alt="Mapa Sea of Thieves" class="map">
+        <img src="sea_of_thieves_map.png" alt="Mapa Sea of Thieves" class="map" id="map">
         <!-- Lokalizacje na mapie -->
         <div class="location" style="top: 20%; left: 30%;">
             <div class="tooltip">Lokalizacja 1</div>
@@ -70,5 +71,14 @@
         </div>
         <!-- Dodaj więcej lokalizacji według potrzeb -->
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zoom-js/2.0.6/zoom.min.js"></script>
+    <script>
+        Zoom.initialize({
+            target: '#map',
+            zoomFactor: 2,
+            duration: 300,
+            easing: 'ease-out'
+        });
+    </script>
 </body>
 </html>
