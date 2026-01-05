@@ -1,302 +1,74 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CS2 WHISPER POLSKA – dołącz na Discord!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktywna mapa Sea of Thieves</title>
     <style>
-        :root {
-            --cs-orange: #f7931e;
-            --cs-blue: #00aeef;
-        }
-        * {
-            box-sizing: border-box;
+        body, html {
             margin: 0;
             padding: 0;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-            background: #000;
-        }
-        /* ========== NOWE TŁO z efektami ========== */
-        .bg-wrap {
-            position: fixed;
-            inset: 0;
-            z-index: -4;
-        }
-        .slide {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            animation: kenBurns 20s infinite, bloom 8s infinite;
-            opacity: 0;
-            transition: opacity 2s;
-        }
-        .slide:nth-child(1) {
-            background-image: url("https://images.alphacoders.com/130/1300900.jpg");
-            animation-delay: 0s, 0s;
-        }
-        .slide:nth-child(2) {
-            background-image: url("https://images.alphacoders.com/130/1300904.jpg");
-            animation-delay: 7s, 2s;
-        }
-        .slide:nth-child(3) {
-            background-image: url("https://images.alphacoders.com/130/1300906.jpg");
-            animation-delay: 14s, 4s;
-        }
-        @keyframes kenBurns {
-            0%, 100% { transform: scale(1) translate(0, 0); }
-            50% { transform: scale(1.15) translate(-2%, 2%); }
-        }
-        @keyframes bloom {
-            0%, 100% { filter: brightness(.5) contrast(1.1); }
-            50% { filter: brightness(.65) contrast(1.3) saturate(1.2); }
-        }
-        /* automatyczne przejścia */
-        .slide { opacity: 0; }
-        .slide:nth-child(1) { opacity: 1; animation: fadeInOut 21s -0s infinite, kenBurns 20s -0s infinite, bloom 8s -0s infinite; }
-        .slide:nth-child(2) { animation: fadeInOut 21s -7s infinite, kenBurns 20s -7s infinite, bloom 8s -2s infinite; }
-        .slide:nth-child(3) { animation: fadeInOut 21s -14s infinite, kenBurns 20s -14s infinite, bloom 8s -4s infinite; }
-        @keyframes fadeInOut {
-            0%, 28.5% { opacity: 0; }
-            33%, 61.5% { opacity: 1; }
-            66%, 100% { opacity: 0; }
-        }
-        /* dymna maska przy zmianie */
-        .smoke {
-            position: absolute;
-            inset: 0;
-            background: url('data:image/svg+xml;utf8,\
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">\
-                <defs><mask id="m">\
-                <rect width="1920" height="1080" fill="#000"/>\
-                <circle r="800" fill="white" cx="960" cy="540">\
-                <animate attributeName="r" values="800;1800;800" dur="7s" repeatCount="indefinite"/>\
-                </circle></mask></defs>\
-                <rect width="1920" height="1080" fill="black" mask="url(#m)"/>\
-                </svg>') center/cover no-repeat;
-            opacity: .35;
-            animation: smoke 7s infinite;
-        }
-        @keyframes smoke {
-            0%, 100% { opacity: 0; }
-            50% { opacity: .35; }
-        }
-        /* ========== CZĄSTECZKI (CSS) ========== */
-        .particles {
-            position: fixed;
-            inset: 0;
-            z-index: -3;
-            overflow: hidden;
-        }
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--cs-orange);
-            border-radius: 50%;
-            opacity: 0;
-            animation: fly 12s infinite;
-        }
-        .particle:nth-child(odd) { background: var(--cs-blue); }
-        @keyframes fly {
-            0% { transform: translateY(110vh) scale(0); opacity: 0; }
-            10% { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
-        }
-        /* ========== RESZTA (bez zmian) ========== */
-        .overlay {
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            background: rgba(0, 0, 0, .45);
-        }
-        h1 {
-            font-size: clamp(2.2rem, 5.5vw, 4rem);
-            position: relative;
-            animation: drift 6s infinite;
-        }
-        h1::before, h1::after {
-            content: "CS2 WHISPER POLSKA";
-            position: absolute;
-            left: 0;
             width: 100%;
             height: 100%;
-        }
-        h1::before {
-            animation: glitch-1 .4s infinite;
-            color: var(--cs-blue);
-            z-index: -1;
-        }
-        h1::after {
-            animation: glitch-2 .4s infinite;
-            color: var(--cs-orange);
-            z-index: -2;
-        }
-        @keyframes drift {
-            0%, 100% { transform: translate(0); }
-            50% { transform: translate(-2px, 2px); }
-        }
-        @keyframes glitch-1 {
-            0%, 100% { clip-path: inset(0 0 0 0); }
-            20% { clip-path: inset(15% 0 85% 0); }
-        }
-        @keyframes glitch-2 {
-            0%, 100% { clip-path: inset(0 0 0 0); }
-            20% { clip-path: inset(85% 0 5% 0); }
-        }
-        h2 {
-            font-weight: 400;
-            opacity: .9;
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            margin-bottom: 2rem;
-        }
-        main {
-            max-width: 750px;
-            padding: 0 1rem;
-        }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            justify-content: center;
-            margin: 2.5rem 0;
-        }
-        .feat {
-            background: rgba(0, 0, 0, .35);
-            border: 1px solid rgba(255, 255, 255, .15);
-            border-radius: 12px;
-            padding: 1.3rem 1.5rem;
-            flex: 1 1 220px;
-            backdrop-filter: blur(6px);
-            transition: transform .3s, border-color .3s;
-            animation: fadeUp 1s both;
-        }
-        .feat:hover {
-            transform: translateY(-6px);
-            border-color: var(--cs-orange);
-        }
-        .feat-icon {
-            font-size: 1.8rem;
-            margin-bottom: .4rem;
-        }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .btn-discord {
-            display: inline-flex;
-            align-items: center;
-            gap: .7rem;
-            background: #5865f2;
+            background-color: #000;
             color: #fff;
-            font-size: 1.3rem;
-            padding: .9rem 2.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: background .25s, transform .25s;
-            box-shadow: 0 4px 18px rgba(88, 101, 242, .35);
-            animation: pulse 2s infinite;
+            font-family: 'Arial', sans-serif;
         }
-        .btn-discord:hover {
-            background: #4752c4;
-            transform: scale(1.05);
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
         }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 4px 18px rgba(88, 101, 242, .35); }
-            50% { box-shadow: 0 6px 24px rgba(88, 101, 242, .55); }
+        .map {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: sepia(50%) contrast(1.5) brightness(0.8);
         }
-        footer {
-            margin-top: 3rem;
-            font-size: .85rem;
-            opacity: .55;
+        .location {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff0;
+            border-radius: 50%;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+        }
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: none;
+            pointer-events: none;
+        }
+        .location:hover .tooltip {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <!-- tło + efekty -->
-    <div class="bg-wrap">
-        <div class="slide"></div>
-        <div class="slide"></div>
-        <div class="slide"></div>
-        <div class="smoke"></div>
+    <div class="map-container">
+        <img src="sea_of_thieves_map.png" alt="Mapa Sea of Thieves" class="map">
+        <!-- Lokalizacje na mapie -->
+        <div class="location" style="top: 20%; left: 30%;">
+            <div class="tooltip">Lokalizacja 1</div>
+        </div>
+        <div class="location" style="top: 40%; left: 60%;">
+            <div class="tooltip">Lokalizacja 2</div>
+        </div>
+        <div class="location" style="top: 70%; left: 10%;">
+            <div class="tooltip">Lokalizacja 3</div>
+        </div>
+        <!-- Dodaj więcej lokalizacji według potrzeb -->
     </div>
-    <div class="particles">
-        <!-- 40 cząsteczek -->
-        <div class="particle" style="left:5%;  animation-delay:0s;  animation-duration:11s;"></div>
-        <div class="particle" style="left:10%; animation-delay:1s;  animation-duration:12s;"></div>
-        <div class="particle" style="left:15%; animation-delay:2s;  animation-duration:10s;"></div>
-        <div class="particle" style="left:20%; animation-delay:3s;  animation-duration:13s;"></div>
-        <div class="particle" style="left:25%; animation_delay:4s;  animation-duration:12s;"></div>
-        <div class="particle" style="left:30%; animation-delay:5s;  animation-duration:11s;"></div>
-        <div class="particle" style="left:35%; animation-delay:6s;  animation-duration:10s;"></div>
-        <div class="particle" style="left:40%; animation-delay:7s;  animation-duration:13s;"></div>
-        <div class="particle" style="left:45%; animation-delay:8s;  animation-duration:11s;"></div>
-        <div class="particle" style="left:50%; animation-delay:9s;  animation-duration:12s;"></div>
-        <div class="particle" style="left:55%; animation-delay:0.5s; animation-duration:10s;"></div>
-        <div class="particle" style="left:60%; animation-delay:1.5s; animation-duration:13s;"></div>
-        <div class="particle" style="left:65%; animation-delay:2.5s; animation-duration:11s;"></div>
-        <div class="particle" style="left:70%; animation-delay:3.5s; animation-duration:12s;"></div>
-        <div class="particle" style="left:75%; animation-delay:4.5s; animation-duration:10s;"></div>
-        <div class="particle" style="left:80%; animation-delay:5.5s; animation-duration:13s;"></div>
-        <div class="particle" style="left:85%; animation-delay:6.5s; animation-duration:11s;"></div>
-        <div class="particle" style="left:90%; animation-delay:7.5s; animation-duration:12s;"></div>
-        <div class="particle" style="left:95%; animation-delay:8.5s; animation-duration:10s;"></div>
-    </div>
-    <div class="overlay"></div>
-
-    <header>
-        <h1>CS2 WHISPER POLSKA</h1>
-        <h2>Oficjalny Discord aktywnej polskiej społeczności Counter-Strike 2</h2>
-    </header>
-
-    <main>
-        <p style="font-size: 1.1rem; line-height: 1.5;">
-            Szukasz równych sobie do rankedów? Potrzebujesz ekipy na turnieje? A może chcesz poprawić aim i poznać nowe granie?
-            Na naszym serwerze znajdziesz graczy na każdym poziomie — od silverów po globali.
-        </p>
-
-        <section class="features">
-            <div class="feat">
-                <div class="feat-icon">🎯</div>
-                <strong>Team Finder</strong>
-                <div>sprawdzony skład na każdą godzinę</div>
-            </div>
-            <div class="feat">
-                <div class="feat-icon">💬</div>
-                <strong>10+ kanałów głosowych</strong>
-                <div>zawsze znajdziesz wolny slot</div>
-            </div>
-            <div class="feat">
-                <div class="feat-icon">🏆</div>
-                <strong>Turnieje & ligi</strong>
-                <div>co tydzień eventy z nagrodami</div>
-            </div>
-            <div class="feat">
-                <div class="feat-icon">📈</div>
-                <strong>Poradniki & demo-review</strong>
-                <div>poprawiaj skill z lepszymi</div>
-            </div>
-        </section>
-
-        <a class="btn-discord" href="https://discord.gg/MGU3qsyBDB">
-            <span>🎮</span>
-            <span>Dołącz na Discord</span>
-        </a>
-    </main>
-
-    <footer>
-        Nie czekaj — aktywność rośnie, a gracze czekają właśnie na Ciebie.
-    </footer>
 </body>
 </html>
